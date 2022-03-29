@@ -1,0 +1,37 @@
+package mygroups.myprojects.model.Person;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.List;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.objectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
+import mygroups.myprojects.model.person;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+//        System.out.println( "Hello World!" );
+    	try {
+    		objectMapper mapper = new XmlMapper();
+    		InputStream inputStream = new FileInputStream(new File("/home/parallels/demo/persons.xml"));
+    		
+    		TypeReference<List<Person>> typeReference = new TypeReference<List<Person>>() {};
+    		List<Person> persons = mapper.readValue(inputStream, typeReference);
+    		for(person p :persons) {
+    			System.out.println("name is"+p.getFirstname()+"city is"+p.getAddress().getCity()+"first car is"+p.getCars()[0]);
+    			
+    		}
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+}

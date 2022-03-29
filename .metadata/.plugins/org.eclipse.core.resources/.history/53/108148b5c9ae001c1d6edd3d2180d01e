@@ -1,0 +1,22 @@
+package mygroups.myprojects;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+//        System.out.println( "Hello World!" );
+    	try {
+    		objectMapper mapper = new XmlMapper();
+    		InputStream inputStream = new FileInputStream(new File("/home/parallels/demo/person.xml"));
+    		TypeReference<List<Person>> typeReference = new TypeReference<List<Person>>() {};
+    		
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+}

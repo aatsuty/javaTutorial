@@ -1,0 +1,15 @@
+package mygroups.myprojects.model;
+
+public class Address {
+	String street;
+	String city;
+	String zip;
+	public Address() {}
+	public Address(String street, String city, String zip) {
+		super();
+		this.street = street;
+		this.city = city;
+		this.zip = zip;
+	}
+
+}

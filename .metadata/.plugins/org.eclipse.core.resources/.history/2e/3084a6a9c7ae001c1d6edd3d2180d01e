@@ -1,0 +1,5 @@
+package mygroups.myprojects.model;
+
+public class Address {
+
+}
